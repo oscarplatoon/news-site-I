@@ -1,19 +1,20 @@
 import React, { Component } from 'react';
 
-class AppNav extends Component {
+function AppNav (props) {
 
-  handleClick = () => {
+  const handleClick = () => {
     return 
   }
 
-  renderNavItems = () => {
-    let elements = this.props.navItems.map((item, index) => {
+  const renderNavItems = () => {
+    let elements = props.navItems.map((item, index) => {
       return (
-          <a href='#' key={index} onClick={ () => this.props.handleNavClick(item.value) }> 
+          <a href='#' key={index} onClick={ () => props.handleNavClick(item.value) }> 
           | { item.label } | 
           </a> 
       )
     })
+    
     return (
       <nav>
         { elements }
@@ -21,18 +22,17 @@ class AppNav extends Component {
     )
   }
 
-  render() {
-    return (
-      <nav>
-        { this.renderNavItems() }
-      </nav>
-    )
-  }
+
+  return (
+    <nav>
+      { renderNavItems() }
+    </nav>
+  )
 }
 
 export default AppNav;
 
-// The `AppNav` component should return a `<nav>` component that contains `<a>`'s as children - one for every item in the `this.props.navItems` array.
+// The `AppNav` component should return a `<nav>` component that contains `<a>`'s as children - one for every item in the `props.navItems` array.
 
 // The AppNav component should:
-// 1) Map through `this.props.navItems` to create an array of `<a>` elements. The objects within `this.props.navItems` look something like this:
+// 1) Map through `props.navItems` to create an array of `<a>` elements. The objects within `props.navItems` look something like this:
