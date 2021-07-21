@@ -2,9 +2,12 @@ import React, { Component } from 'react';
 import News from './data/news.json';
 import navItems from './data/navItems.json';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import AppNav from './components/AppNav/AppNav.js';
 import ArticleTeaser from './components/ArticleTeaser/ArticleTeaser.js'
 import Article from './components/Article/Article.js'
+import Navbar from 'react-bootstrap/Navbar'
+import Container from 'react-bootstrap/Container'
 
 class App extends Component {
   constructor(props) {
@@ -29,11 +32,14 @@ class App extends Component {
     const { article, navItems } = this.state
 
     return (
-      <div>
+      <div className="App">
         <h1>AppNav Component</h1>
         <hr />
-
-        <AppNav navItems={navItems} handleNavClick={(clickedItem) => { console.log(clickedItem) }} />
+        <Navbar bg="dark" variant="dark">
+          <Container>
+            <AppNav navItems={navItems} handleNavClick={(clickedItem) => { console.log(clickedItem) }} />
+          </Container>
+        </Navbar>
 
         <h1>ArticleTeaser Component</h1>
         <hr />
