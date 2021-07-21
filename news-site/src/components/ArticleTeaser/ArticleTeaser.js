@@ -1,25 +1,21 @@
-import React, { Component } from 'react';
+function ArticleTeaser(props) {
 
-class ArticleTeaser extends Component {
-
-  handleClick = () => {
-    this.props.handleTitleClick(this.props.id)
+  const handleClick = () => {
+    props.handleTitleClick(props.id)
   }
 
-  render() {
-    return (
-      <div>
-        <div className='link'>
-          <a href='#' onClick={ this.handleClick }>
-            {this.props.title}
-          </a>
-          <p>
-            { this.props.created_date }
-          </p>
-        </div>
+  return (
+    <div>
+      <div className='link'>
+        <a href='#' onClick={ handleClick }>
+          {props.title}
+        </a>
+        <p>
+          { props.created_date }
+        </p>
       </div>
-    )
-  }
+    </div>
+  )
 }
 
 export default ArticleTeaser;
