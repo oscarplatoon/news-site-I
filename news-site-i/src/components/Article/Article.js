@@ -16,7 +16,9 @@ class Article extends Component {
         { this.props.byline &&
         <h2>{this.props.byline}</h2>
         }
+        { this.props.image &&
         <img src={ this.props.image } alt="img"></img>
+        }
         <p>{this.props.abstract}</p>
       </div>
     )
