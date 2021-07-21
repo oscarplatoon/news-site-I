@@ -9,6 +9,7 @@ import Article from './components/Article/Article.js'
 class App extends Component {
   constructor(props) {
     super(props);
+    
     const randomArticleIndex = Math.floor(Math.random() * News.length);
     const randomArticle = News[randomArticleIndex];
 
@@ -47,7 +48,7 @@ class App extends Component {
         <h1>Article Component</h1>
         <hr />
 
-        <Article {...article} />
+        <Article { ...article } />
       </div>
     );
   }
