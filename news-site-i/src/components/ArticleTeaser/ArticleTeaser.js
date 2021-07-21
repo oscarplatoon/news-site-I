@@ -7,15 +7,14 @@ import React, { Component } from 'react';
 // Display the created_date in a <p> tag.
 
 
-class ArticleTeaser extends Component {
-  render() {
+const ArticleTeaser = (props) => {
+  
     return (
       <div>
-        <a onClick={ () => this.props.handleTitleClick(this.props.id) } href="#">{ this.props.title }</a>
-        <p>{this.props.create_date}</p>
+        <a onClick={ () => props.handleTitleClick(props.id) } href="#">{ props.title }</a>
+        <p>{props.create_date}</p>
       </div>
     )
-  }
 }
 
 export default ArticleTeaser;
