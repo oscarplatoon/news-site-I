@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 
 function AppNav (props) {
 
-  const handleClick = () => {
-    return 
-  }
 
   const renderNavItems = () => {
     let elements = props.navItems.map((item, index) => {
@@ -15,11 +12,9 @@ function AppNav (props) {
       )
     })
     
-    return (
-      <nav>
-        { elements }
-      </nav>
-    )
+    return <span>
+      { elements }
+    </span>
   }
 
 
