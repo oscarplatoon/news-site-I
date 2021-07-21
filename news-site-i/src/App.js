@@ -48,7 +48,7 @@ class App extends Component {
         <h1>Article Component</h1>
         <hr />
 
-        <Article {...article} />
+        <Article { ...article } />
       </div>
     );
   }
