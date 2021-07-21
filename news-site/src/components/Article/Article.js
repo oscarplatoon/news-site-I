@@ -1,32 +1,30 @@
-import React, { Component } from 'react';
 
-class Article extends Component {
 
-  getByline = () => {
-    return this.props.byline && <h2>{ this.props.byline }</h2>
+function Article(props) {
+
+  const getByline = () => {
+    return props.byline && <h2>{ props.byline }</h2>
   }
 
-  getImage = () => {
-    return this.props.image && <img src={ this.props.image } alt={ this.props.title } />
+  const getImage = () => {
+    return props.image && <img src={ props.image } alt={ props.title } />
   }
-
-  render() {  
-    return (
-      <div>
-        <h1> 
-          { this.props.title }
-        </h1>
-        <p>
-          { this.props.created_date }
-        </p>
-        { this.getByline() }
-        { this.getImage() }
-        <p>
-          { this.props.abstract }
-        </p>
-      </div>
-    )
-  }
+  
+  return (
+    <div>
+      <h1> 
+        { props.title }
+      </h1>
+      <p>
+        { props.created_date }
+      </p>
+      { getByline() }
+      { getImage() }
+      <p>
+        { props.abstract }
+      </p>
+    </div>
+  )
 }
 
 export default Article;
