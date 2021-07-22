@@ -24,7 +24,7 @@ class App extends Component {
       }
     }
   }
-
+ d
   render() {
     const { article, navItems } = this.state
 

@@ -4,7 +4,7 @@ class ArticleTeaser extends Component {
   render() {
     return (
       <div>
-        <a href='#' onClick={ () => this.props.handleTitleClick(this.props.id) }> { this.props.title }</a>
+        <a href='#' onClick={ () => this.props.handleTitleClick(this.props.id) }d> { this.props.title }</a>
         <p>{ this.props.created_date}</p>
       </div>
     )
