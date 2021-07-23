@@ -1,33 +1,38 @@
-import React, { Component } from 'react';
+import { useState } from 'react';
 import News from './data/news.json';
-import navItems from './data/navItems.json';
+import navItemsData from './data/navItems.json';
 import './App.css';
 import AppNav from './components/AppNav/AppNav.js';
 import ArticleTeaser from './components/ArticleTeaser/ArticleTeaser.js'
 import Article from './components/Article/Article.js'
 
-class App extends Component {
-  constructor(props) {
-    super(props);
+function App(props) {
+ 
+
+  // local variables
     const randomArticleIndex = Math.floor(Math.random() * News.length);
     const randomArticle = News[randomArticleIndex];
-
-    this.state = {
-      navItems: navItems,
-      article: {
-        id: randomArticleIndex,
-        title: randomArticle.title,
-        abstract: randomArticle.abstract,
-        byline: randomArticle.byline,
-        image: randomArticle.multimedia.length ? randomArticle.multimedia[0].url : null,
-        created_date: randomArticle.created_date
-      }
+    let articleData = {
+      id: randomArticleIndex,
+      title: randomArticle.title,
+      abstract: randomArticle.abstract,
+      byline: randomArticle.byline,
+      image: randomArticle.multimedia.length ? randomArticle.multimedia[0].url : null,
+      created_date: randomArticle.created_date
     }
-  }
 
-  render() {
-    const { article, navItems } = this.state
 
+    // states
+    const [navItems, setNavItems] = useState(navItemsData)
+    
+
+     
+     
+  
+    const [article, setArticle] = useState(articleData)
+
+
+    // render
     return (
       <div>
         <h1>AppNav Component</h1>
@@ -50,7 +55,6 @@ class App extends Component {
         <Article {...article} />
       </div>
     );
-  }
 }
 
 export default App;
